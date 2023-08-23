@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+       
+	<!-- Spring kontrolune verilen bir sınıfın xml config dosyasında sınıfın bir propertisi tanımlanmayabilir
+	ancak sınıf springin kontrolunde oldugu icin o propertye null degeri atanır  -->
+	   
+	   <bean id="selam" class="com.brkbthn.Selam">
+	       <property name="mesaj1" value="Berk Batuhan"></property>
+	       <property name="mesaj2" value="Devran"></property>
+	   </bean>	
+ 	    
+	   <bean id="yazar" class="com.brkbthn.Yazar" parent="selam">
+	       <property name="mesaj1" value="Rick"></property>
+	       <property name="mesaj3" value="lori"></property>
+	   </bean>
+ 	
+  	
+</beans>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+       
+	   <bean id="adres" class="com.brkbthn.Adres">
+	       <property name="tamAdres" value="anamur/mersin"></property>
+	   </bean>	
+	   
+	<!--    
+	    autowire="byName" sayesinde biz property ve referans kullanmadan spring otomatik olarak bu 
+	   işi yapacak burada onemli olan konu degisken adi ile bean id sinin aynı olması gerekliligidir.
+	   <bean id="calisan" class="com.brkbthn.Calisan" autowire="byName"> 
+	       <property name="adi" value="Batuhan"></property>
+	       <property name="soyadi" value="Devran"></property>
+	       <property name="adres" ref="adres"></property>
+	   </bean>
+	          
+	          	 -->
+	          
+	    	   
+	   <!--  ADres parametreli contructor olması durumunda; -->
+	<!--  
+	 <bean id="calisan" class="com.brkbthn.Calisan" > 
+	       <property name="adi" value="Batuhan"></property>
+	       <property name="soyadi" value="Devran"></property>
+	       <constructor-arg ref="adres"></constructor-arg> //Calisan sinifinin  contructoruna parametre olarak adres beanını refere ettik
+	   </bean>
+	          
+ 	-->
+ 	
+ 	<!-- autowire="constructor" sayesinde biz contructor girmeden baglama islemi yapıldı  -->
+ 	
+ 		<bean id="calisan" class="com.brkbthn.Calisan" autowire="constructor" > 
+	       <property name="adi" value="Batuhan"></property>
+	       <property name="soyadi" value="Devran"></property>
+	       <!-- <constructor-arg ref="adres"></constructor-arg> -->
+	   </bean>
+ 	
+ 	<!-- Eger autowire="default" ve autowire="no" kullanılırsa calisan sınıfının default contructoru olmalıdır ve adres degerine null atanır -->
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+  	
+</beans>

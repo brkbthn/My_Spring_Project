@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+  
+	          
+	   <bean class="com.brkbthn.Ogrenci" id="ogrenci">
+	     	<property name="adi" value="Batuhan"></property>
+	     	<property name="soyadi" value="Devran"></property>
+	     	<property name="bolumu" value="Matematik Muhendisligi"></property>
+	     	<property name="yasi" value="24"></property>
+	   </bean>
+	   
+	   
+	   <bean class="com.brkbthn.Koleksiyonlar" id="koleksiyonlar">
+	       <property name="ogrenciList">
+	           <list>
+	               <value>Berk Batuhan Devran mat muh 24 </value>
+	               <ref bean="ogrenci" /> <!-- burada ilk olusturulan bean referans ediildi-->
+	         
+	               <!-- burada ise dogrudan yeni bir beanolusturuluyor-->
+		           <bean class="com.brkbthn.Ogrenci" >
+		               
+			     	<property name="adi" value="berk"></property>
+			     	<property name="soyadi" value="Devran"></property>
+			     	<property name="bolumu" value="yazilim Muhendisligi"></property>
+			     	<property name="yasi" value="34"></property>
+			     	
+		  		   </bean>
+	   
+	           </list>
+	       </property>
+	       
+	       
+	       
+	       <property name="ogrenciSet">
+	           <set>
+	               <value>Berk Batuhan Devran mat muh 24 </value>
+	               <ref bean="ogrenci" /> <!-- burada ilk olusturulan bean referans ediildi-->
+	         
+	               <!-- burada ise dogrudan yeni bir beanolusturuluyor-->
+		           <bean class="com.brkbthn.Ogrenci" >
+		               
+			     	<property name="adi" value="berk"></property>
+			     	<property name="soyadi" value="Devran"></property>
+			     	<property name="bolumu" value="yazilim Muhendisligi"></property>
+			     	<property name="yasi" value="34"></property>
+			     	
+		  		   </bean>
+	           </set>
+	       </property>
+	       
+	       
+	       	       
+	       <property name="ogrenciMap">
+	           		<map>
+	           		    <entry key="jsp" value="java server pages"></entry>
+	           		    <entry key="jsf" value="batuhan"></entry>
+	           		    <entry key="spring" value-ref="ogrenci"> </entry> <!-- referans yoluyla değer girildi-->
+		           		    
+		           		<!-- key degeri girildikten sonra iç kısımda da yeni bir bean olusturularak value verilebilir-->
+		           		<entry key="hibernate" >
+		           		<bean class="com.brkbthn.Ogrenci" >
+			               
+				     	<property name="adi" value="berk"></property>
+				     	<property name="soyadi" value="Devran"></property>
+				     	<property name="bolumu" value="yazilim Muhendisligi"></property>
+				     	<property name="yasi" value="34"></property>
+				     	
+			  		   </bean>
+	           		    
+		           		</entry>
+	           		    
+	           		</map>
+	           		
+	           		
+	       </property>
+	       
+	       <!-- Properties ler genellikle databaselerden bilgi okumak için kullanılır harici bir dosyadır ve 
+	       değişmez bilgiler için projeye dahil edilir.
+	         -->
+	       <property name="ogrenciProperties">
+	           <props>
+	               <prop key="MVC">Berk Batuhan</prop>
+	           </props>
+	       </property>
+	       
+	   </bean>
+	          
+	          
+	          
+
+  	
+</beans>

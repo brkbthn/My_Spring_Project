@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	   
+    	<bean id="personel" class="com.brkbthn.Personel">
+    	    
+    	    <property name="adi" value="batuhan"></property>
+    	    <property name="soyadi"> 
+    	        <value type="java.lang.String"></value>
+    	    </property>
+    	    
+    	    
+    	    <property name="anneAdi" > <null></null></property>
+    	    
+    	    
+    	    <property name="babaAdi" value=""></property>
+    	    
+    	    <property name="adresi" value="anamur"></property>
+    	    
+    	    
+    	    <property name="dogumYili" value="1999"></property>
+    	    <property name="maasi" value="23000"></property>
+    	    <property name="telNo"><value>55</value></property>
+    	    
+    	    
+    	    <property name="ehliyeti"><value>false</value></property>
+    	    <property name="medeniHali" value="true"></property>
+    	    
+    	    
+    	    
+    	    
+    	    
+    	</bean>
+	 
+    
+
+</beans>

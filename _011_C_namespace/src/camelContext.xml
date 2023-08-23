@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+       
+    
+    
+       <bean class="com.brkbthn.Adres" id="adres">
+           <property name="mahalle" value="Yurt"></property>
+           <property name="sehir" value="Adana"></property>
+           <property name="semt" value="merkez"></property>
+       </bean>
+       
+       
+
+  	   <!--      
+       <bean class="com.brkbthn.Calisan" id="calisan">
+           <property name="adi" value="Batuhan"></property>
+           <property name="soyadi" value="Devran"></property>
+           <property name="yasi" value="24"></property>
+           <property name="mahalle" ref="adres"></property>
+       </bean>
+	   -->
+	   
+	   
+	   
+	          <!-- Calisan sinifinin kendi constructoru oldugu icin -->
+	          
+	          
+	   <!--        
+	   <bean class="com.brkbthn.Calisan" id="calisan">
+            <constructor-arg name="adi" ></constructor-arg>
+                <constructor-arg name="soyadi" value="Devran"></constructor-arg>
+                     <constructor-arg name="yasi" value="24"></constructor-arg>
+                          <constructor-arg name="mahalle" ref="adres"></constructor-arg>
+       </bean>    
+	   -->
+	           
+	           
+	           
+	         <!-- C namespace kullanarak -->  
+	  
+	  <bean class="com.brkbthn.Calisan" id="calisan"
+	       c:adi="Batuhan"
+	       c:soyadi="Devran"
+	       c:yasi="24"
+	       c:adres-ref="adres" 
+	       
+       />
+           
+           
+	   <!-- 
+	    <bean class="com.brkbthn.Calisan" id="calisan"
+	       c:_0="Batuhan"
+	       c:_1="Devran"
+	       c:_2="24"
+	       c:_3-ref="adres" 
+	       
+           />
+	    -->
+	     
+      
+      
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+	          
+
+  	
+</beans>

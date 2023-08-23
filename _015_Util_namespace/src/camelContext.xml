@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+  
+	          
+	   
+		<!-- 	          
+		
+		
+	  	<bean class="com.brkbthn.Personel" id="personel">
+	  	    <property name="listemiz">
+	  	     <util:list list-class="java.util.ArrayList">
+	  	         
+	  	         <value>sdsv</value>
+	  	         <value>sssdfs</value>
+	  	         <value>adskl</value>
+	  	         
+	  	     </util:list>     
+	  	    </property>
+	  	</bean>
+	  	
+	  	
+	   -->
+	   
+	      
+		<!-- 	          
+	  	<bean class="com.brkbthn.Personel" id="personel">
+	  	    <property name="listemiz">
+	  	     <util:set set-class="java.util.TreeSet"> // bu kullanımda veriler sıralanır
+	  	         
+	  	         <value>sdsv</value>
+	  	         <value>sssdfs</value>
+	  	         <value>adskl</value>
+	  	         
+	  	     </util:list>
+ 
+	  	    </property>    
+	  	</bean>
+	  	
+	   -->
+	   
+	 <!--   
+	   <bean id="sehir" class="com.brkbthn.Sehir">
+	       <property name="mapimiz"> Bu haliyle calistirdigimizde su anda verilen sıra ile yazdırm işlemei yapar
+	           <util:map>
+	               <entry key="1" value="batuhan"></entry>
+	                <entry key="2" value="devran"></entry>
+	                 <entry key="3" value="matMuh"></entry>
+	           </util:map>
+	       </property>
+	   </bean>
+	   
+	    -->
+	   
+	   	   
+	 <!--   
+	   <bean id="sehir" class="com.brkbthn.Sehir">
+	       <property name="mapimiz" map-class="java.util.TreeMap"> Bu haliyle ise sıralı olarak yazdırma yapacaktır
+	           <util:map>
+	               <entry key="1" value="batuhan"></entry>
+	                <entry key="2" value="devran"></entry>
+	                 <entry key="3" value="matMuh"></entry>
+	           </util:map>
+	       </property>
+	   </bean>
+	   
+	    -->
+	   
+	  
+	   
+	   
+	   
+	   
+
+  	
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+        <!-- 
+  	    <bean class="com.brkbthn.Ogrenci" id="ogrenci" scope="singleton">
+  	        
+        <property name="adi" value="Batuhan"></property>
+        <property name="soyadi" value="Devran"></property>
+        <property name="numarasi" value="595"></property> 
+        
+    	</bean> 
+    	-->
+    	<!-- p namespace nedeniyle kodumuzu basitleştirebiliriz-->
+    	<bean class="com.brkbthn.Ogrenci" id="ogrenci"
+    	    p:adi="Batuhan"
+    	    p:soyadi="Devran"
+    	    p:numarasi="595"
+    	    p:universitesi-ref="okul"
+    	    
+    	    />
+     	<bean id="okul" class="com.brkbthn.Okul"
+     	    p:kurumAdi="YTU"
+    	/>
+  	
+</beans>
